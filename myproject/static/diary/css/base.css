@@ -1,0 +1,162 @@
+/* --- 変数 --- */
+:root {
+    --primary-color: #4f46e5;
+    --danger-color: #ef4444;    /* 削除用（赤） */
+    --edit-color: #10b981;      /* 編集用（緑） */
+    --bg-color: #f3f4f6;
+    --text-color: #1f2937;
+    --border-color: #d1d5db;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* --- タイトル --- */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+/* --- ボタン共通スタイル --- */
+.button, button[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+/* トップ・保存ボタン（青） */
+.button, button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white !important;
+}
+
+/* 編集ボタン（緑） */
+a[href*="update"] {
+    background-color: var(--edit-color);
+}
+
+/* 削除ボタン（赤） */
+a[href*="delete"] {
+    background-color: var(--danger-color);
+}
+
+.button:hover, button:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+/* --- 画像 --- */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* --- Django Form (as_p) の調整 --- */
+form p {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input[type="text"], 
+form input[type="file"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* --- ログアウトフォーム --- */
+form[action*="logout"] {
+    display: inline;
+}
+
+form[action*="logout"] button {
+    background: none;
+    color: #6b7280;
+    padding: 0;
+    text-decoration: underline;
+    font-size: 0.85rem;
+    margin-top: 20px;
+}
+
+/* 一覧のヘッダー部分 */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 日記カードのリスト */
+.diary-list {
+    display: grid;
+    gap: 15px; /* カード同士の隙間 */
+}
+
+/* 個別のカード */
+.diary-item {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: #fff;
+}
+
+.diary-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.diary-date {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.diary-title {
+    margin: 5px 0 0 0;
+    font-size: 1.2rem;
+    border-left: none; /* base.cssのh2の線を消す */
+    padding-left: 0;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 50px;
+    color: #9ca3af;
+    background: #f9fafb;
+    border-radius: 8px;
+}

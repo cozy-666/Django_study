@@ -1,12 +1,22 @@
 {% extends "base/diary_base.html" %}
 {% block body %}
-<ul>
+
+<div class="header-flex">
+    <h2>日記一覧</h2>
+    <a href="{% url 'diary:page_create' %}" class="button">新規作成</a>
+</div>
+
+<div class="diary-list">
     {% for page in page_list %}
-        <li>{{ page.page_date }}: 
-            <a href="{% url 'diary:page_detail' page.id %}">{{ page.title }}</a>
-        </li>
+        <div class="diary-item">
+            <span class="diary-date">{{ page.page_date|date:"Y/m/d" }}</span>
+            <h3 class="diary-title">
+                <a href="{% url 'diary:page_detail' page.id %}">{{ page.title }}</a>
+            </h3>
+        </div>
     {% empty %}
-        <div>日記のページが１つもありません。</div>
+        <div class="empty-message">日記のページが１つもありません。</div>
     {% endfor %}
-</ul>
-{% endblock %}>
+</div>
+
+{% endblock %}
