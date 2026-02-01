@@ -1,0 +1,1 @@
+Djangoはデフォルトでsqlliteが入っている
