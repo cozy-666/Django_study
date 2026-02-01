@@ -29,3 +29,6 @@ python manage.py createsuperuser
 user
 test@gmail.com
 password
+
+#　画像ファイルを扱うとき下記インストール必要
+pip install pillow
