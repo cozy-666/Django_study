@@ -32,3 +32,6 @@ password
 
 #　画像ファイルを扱うとき下記インストール必要
 pip install pillow
+
+## ログイン、ログアウト機能
+python manage.py startapp accounts
