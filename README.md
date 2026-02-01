@@ -22,3 +22,10 @@ CREATE TABLE "diary_page" ("id" char(32) NOT NULL PRIMARY KEY, "title" varchar(1
 COMMIT;
 
 python manage.py migrate
+
+# 管理サイトでログインできるユーザー作成
+python manage.py createsuperuser
+
+user
+test@gmail.com
+password
