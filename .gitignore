@@ -1,3 +1,15 @@
 
 # Local secrets and runtime data
 /myproject/db.sqlite3
+
+.venv/
+__pycache__/
+*.sqlite3
+myproject/media/
+
+# Local screenshot demo artifacts
+.venv-demo/
+.env.demo
+.env.demo.*
+.demo/
+**/demo.sqlite*

@@ -3,6 +3,7 @@ from pathlib import Path
 import uuid
 
 class Page(models.Model):
+    owner = models.ForeignKey("auth.User", on_delete=models.CASCADE, null=True, editable=False)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, verbose_name="ID")
     title = models.CharField(max_length=100, verbose_name="タイトル")
     body = models.TextField(max_length=2000, verbose_name="本文")
