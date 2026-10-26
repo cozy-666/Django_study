@@ -9,6 +9,6 @@ class Command(BaseCommand):
         u, _ = get_user_model().objects.get_or_create(username="demo", defaults={"email": "demo@example.invalid"})
         u.set_password("DemoOnly123!")
         u.save()
-        for i, title in enumerate(["架空の庭の観察", "試作ノートの記録"], 1):
-            Page.objects.update_or_create(owner=u, title=title, defaults={"body": "画面撮影専用の架空の日記です。", "page_date": date(2026, 10, i)})
+        for i, title in enumerate(["庭のミニトマトの記録", "試作ノートの記録"], 1):
+            Page.objects.update_or_create(owner=u, title=title, defaults={"body": "ミニトマトに新しい葉が出ました。水やりと成長の様子を記録します。", "page_date": date(2026, 10, i)})
         self.stdout.write("Fictional demo data ready")
